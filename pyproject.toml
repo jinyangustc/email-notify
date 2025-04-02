@@ -1,0 +1,41 @@
+[project]
+name = "email-notify"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Jinyang Li", email = "jinyang7@illinois.edu" }]
+requires-python = ">=3.10"
+dependencies = ["click>=8.1.8", "python-dotenv>=1.1.0"]
+
+[project.scripts]
+email-notify = "email_notify:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pyright>=1.1.398", "pytest>=8.3.5", "ruff>=0.11.2"]
+
+[tool.ruff]
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pyright]
+venv = ".venv"
+venvPath = "./"
